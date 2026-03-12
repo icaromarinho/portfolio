@@ -3,31 +3,22 @@
 
 describe('Teste de login', () => {
 
-    it('Deve fazer login com sucesso', () => {
+    beforeEach(() => {
         cy.start()
-
-        cy.submitLogin('standard_user', 'secret_sauce')
-
-        cy.get('.app_logo')
-            .should('be.visible')
-            .and('have.text', 'Swag Labs')
     })
 
-    it('Não deve fazer login com usuário inválido', () => {
-        cy.start()
+    it('Deve permitir login com credenciais válidas', () => {
+        cy.successfulLogin()
 
-        cy.submitLogin('invalid_user', 'secret_sauce')
+        cy.url().should('include', '/inventory')
 
-        cy.contains('Epic sadface: Username and password do not match any user in this service')
-            .should('be.visible')
     })
 
-    it('Não deve fazer login com senha inválida', () => {
-        cy.start()
+    it('Deve exibir erro para usuário inválido', () => {
+        cy.invalidLogin('invalidUser', Cypress.env('validPassword'), 'Epic sadface: Username and password do not match any user in this service')
+    })
 
-        cy.submitLogin('standard_user', '123')
-
-        cy.contains('Epic sadface: Username and password do not match any user in this service')
-            .should('be.visible')
+    it('Deve exibir erro para senha inválida', () => {
+        cy.invalidLogin(Cypress.env('validUser'), 'invalidPassword', 'Epic sadface: Username and password do not match any user in this service')
     })
 })
