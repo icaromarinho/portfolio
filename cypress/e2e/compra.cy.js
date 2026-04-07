@@ -64,5 +64,13 @@ describe('Fluxo de compra', () => {
                 })
             })
         })
+
+        cy.get('#finish')
+            .click()
+
+        cy.url().should('include', '/checkout-complete')
+
+        cy.get('.complete-header')
+            .should('have.text', 'Thank you for your order!')
     })
 })
