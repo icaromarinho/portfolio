@@ -3,13 +3,13 @@
 
 describe('Fluxo de compra', () => {
 
-    it('Deve realizar uma compra', () => {
+    beforeEach(() => {
         cy.start()
-
         cy.successfulLogin()
-
         cy.url().should('include', '/inventory')
+    })
 
+    it('Deve realizar uma compra', () => {
         cy.get('#add-to-cart-sauce-labs-backpack')
             .click()
 

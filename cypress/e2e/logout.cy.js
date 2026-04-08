@@ -5,13 +5,11 @@ describe('Teste de logout', () => {
 
     beforeEach(() => {
         cy.start()
+        cy.successfulLogin()
+        cy.url().should('include', '/inventory')
     })
 
     it('Deve fazer logout e retornar para a página de login', () => {
-        cy.successfulLogin()
-
-        cy.url().should('include', '/inventory')
-
         cy.get('#react-burger-menu-btn')
             .click()
 
