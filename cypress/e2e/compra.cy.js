@@ -71,6 +71,6 @@ describe('Fluxo de compra', () => {
         cy.url().should('include', '/checkout-complete')
 
         cy.get('.complete-header')
-            .should('have.text', 'Thank you for your order!')
+            .should('have.text', 'Thank you for your order! ---123')
     })
 })

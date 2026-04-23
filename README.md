@@ -33,5 +33,15 @@ Os testes estão organizados na pasta `cypress/e2e`, cada arquivo cobrindo um fl
     npx cypress open
 
 
+## 🔄 Integração Contínua (CI/CD)
+Este projeto utiliza GitHub Actions para executar os testes de forma automática em cada push.
+O pipeline está configurado para:
+
+- Fazer checkout do código.
+- Instalar dependências com cache.
+- Executar todos os testes Cypress.
+- Armazenar vídeos e screenshots como artefatos (em caso de falhas).
+
+
 ## 📢 Observação
 Este portfólio está em constante evolução. Novos testes e melhorias serão adicionados regularmente para demonstrar boas práticas em automação de testes.
