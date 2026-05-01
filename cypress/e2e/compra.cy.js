@@ -1,3 +1,5 @@
+import compraData from '../fixtures/compra.json'
+
 /// <reference types="cypress" />
 
 
@@ -10,6 +12,8 @@ describe('Fluxo de compra', () => {
     })
 
     it('Deve realizar uma compra', () => {
+        const compraForm = compraData.checkout
+
         cy.get('#add-to-cart-sauce-labs-backpack')
             .click()
 
@@ -27,13 +31,13 @@ describe('Fluxo de compra', () => {
         cy.url().should('include', '/checkout-step-one')
 
         cy.get('#first-name')
-            .type('nomeUsuario')
+            .type(compraForm.nome)
 
         cy.get('#last-name')
-            .type('sobrenomeUsuario')
+            .type(compraForm.sobrenome)
 
         cy.get('#postal-code')
-            .type('50000-000')
+            .type(compraForm.postal)
 
         cy.get('#continue')
             .click()

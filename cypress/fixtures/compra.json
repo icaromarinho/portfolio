@@ -1,0 +1,7 @@
+{
+    "checkout": {
+        "nome": "nomeUsuario",
+        "sobrenome": "sobrenomeUsuario",
+        "postal": "50000-000"
+    }
+}
