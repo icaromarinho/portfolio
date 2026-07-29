@@ -28,16 +28,16 @@ Durante o desenvolvimento dos testes, foram utilizadas técnicas e recursos que 
 Os testes estão organizados na pasta `cypress/e2e`, cada arquivo cobrindo um fluxo ou cenário específico.  
 O pipeline de CI/CD está configurado na pasta `.github/workflows`, com o arquivo `ci.yml` responsável por executar os testes automaticamente em cada push.
 
-## 📌 Como executar
+## ▶️ Como executar
 **1**. Clone este repositório:
    
-   git clone https://github.com/icaromarinho/portfolio.git
+    git clone https://github.com/icaromarinho/portfolio.git
 
 **2**. Entre na pasta do projeto:
  
     cd portfolio
 
-**3**. Instale as dependências:
+**3**. Instale todas as dependências listadas no **package.json**:
 
     npm install
 
