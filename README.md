@@ -59,8 +59,6 @@ O pipeline está configurado para:
 - Executar todos os testes Cypress.
 - Armazenar **screenshots** como artefatos em caso de falhas.
 
-> Observação: os vídeos são gerados automaticamente apenas quando os testes são executados em modo headless localmente (`npx cypress run`).
-
 
 ## 📢 Observação
 Este portfólio está em constante evolução. Novos testes e melhorias serão adicionados regularmente para demonstrar boas práticas em automação de testes e integração contínua.

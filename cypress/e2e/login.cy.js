@@ -9,9 +9,7 @@ describe('Teste de login', () => {
 
     it('Deve permitir login com credenciais válidas', () => {
         cy.successfulLogin()
-
         cy.url().should('include', '/inventory')
-
     })
 
     it('Deve exibir erro para usuário inválido', () => {
