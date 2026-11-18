@@ -1,13 +1,6 @@
-# Ignorar dependências instaladas localmente
 node_modules/
-
-# Ignorar arquivos de log
-*.log
-
-# Ignorar cache do Cypress
-cypress/screenshots/
 cypress/videos/
-cypress.env.json/
+cypress/screenshots/
 
 # Ignorar arquivos temporários do sistema
 .DS_Store
