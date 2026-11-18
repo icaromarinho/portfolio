@@ -13,10 +13,14 @@ describe('Teste de login', () => {
     })
 
     it('Deve exibir erro para usuário inválido', () => {
-        cy.invalidLogin('invalidUser', Cypress.env('validPassword'), 'Epic sadface: Username and password do not match any user in this service')
+        cy.env(['validPassword']).then(({ validPassword }) => {
+            cy.invalidLogin('invalidUser', `${validPassword}`, 'Epic sadface: Username and password do not match any user in this service')
+        })
     })
 
     it('Deve exibir erro para senha inválida', () => {
-        cy.invalidLogin(Cypress.env('validUser'), 'invalidPassword', 'Epic sadface: Username and password do not match any user in this service')
+        cy.env(['validUser']).then(({ validUser }) => {
+            cy.invalidLogin(`${validUser}`, 'invalidPassword', 'Epic sadface: Username and password do not match any user in this service')
+        })
     })
 })
